@@ -55,7 +55,7 @@ void dequeue(queue*q,int* n ){
 }
 
 void print(queue*q,int *n){
-    for (int i=0;i<*n;i++){
+    for (int i=0;i<*n-1;i++){
         printf("%d\n",q->arr[i]);
         
     }
