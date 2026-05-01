@@ -22,13 +22,14 @@ int isfull(queue*q){
     return 0;
 }
 
-void enqueue(queue*q,int value){
+void enqueue(queue*q,int value, int *n){
     if(isfull(q)){
         return ;
     }
     else{
         q->end++;
         q->arr[q->end]=value;
+        (*n)++;
     }
 }
 
@@ -66,12 +67,12 @@ int main(){
     q->size=10;
     q->end=-1;
     q->arr=(int*)malloc(q->size*sizeof(int));
-    int n=4;
-    enqueue(q,10);
-    enqueue(q,120);
-    enqueue(q,130);
-    enqueue(q,140);
-     enqueue(q,140);
+    int n=0;
+    enqueue(q,10,&n);
+    enqueue(q,120,&n);
+    enqueue(q,130,&n);
+    enqueue(q,140,&n);
+    enqueue(q,140,&n);
     
 
     print(q,&n);
